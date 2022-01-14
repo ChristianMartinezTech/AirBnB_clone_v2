@@ -14,16 +14,17 @@ def do_pack():
     # datetime variable with format
     var_time = datetime.now().strftime("%Y%m%d%H%M%S")
 
-    # Check if the folder versions exists
-    if not path.isdir("./versions/"):
-        local("mkdir versions")
+    # Create folder versions if it doesn't exists
+    local("mkdir -p versions")
 
     # Name crafting
-    file_name = "versions/web_static_" + var_time + ".tbz"
+    file_name = "versions/web_static_" + var_time
 
     # File compression
-    local("tar -cvjf {} web_static".format(file_name))
+    local("tar -cvzf {}.tgz web_static".format(file_name))
 
     # Check if the compression was succesfull
-    if path.isfile(file_name):
+    if path.isfile(file_name + ".tgz"):
         return file_name
+    else:
+        return None
