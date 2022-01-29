@@ -8,11 +8,15 @@ from flask import Flask
 # Instanciating flask on app
 app = Flask(__name__)
 
-# Route home and decorator
+# Routes and decorator
 @app.route('/', strict_slashes=False)
-@app.route('/hbnb', strict_slashes=False)
-def home():
+def homepage():
     return("Hello HBNB!")
+
+
+@app.route('/hbnb', strict_slashes=False)
+def hbnb():
+    return("HBNB")
 
 
 # Running flask
