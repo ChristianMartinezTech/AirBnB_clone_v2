@@ -24,10 +24,12 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c():
-    """display C is argv[0]"""
+def c(text):
+    """display C is argv[1]"""
+    text = text.replace('_', ' ')
+    return ("C " + text)
 
 
 # Running flask
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
