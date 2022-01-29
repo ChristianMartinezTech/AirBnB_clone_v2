@@ -11,9 +11,10 @@ app = Flask(__name__)
 # Route and decorator
 @app.route('/', strict_slashes=False)
 def home():
+    """display “Hello HBNB!"""
     return("Hello HBNB!")
 
 
 # Running flask
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(port=5000, debug=True)
