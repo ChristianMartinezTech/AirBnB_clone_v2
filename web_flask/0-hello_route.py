@@ -8,6 +8,7 @@ from flask import Flask
 # Instanciating flask on app
 app = Flask(__name__)
 
+
 # Route and decorator
 @app.route('/', strict_slashes=False)
 def home():
@@ -17,4 +18,4 @@ def home():
 
 # Running flask
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)

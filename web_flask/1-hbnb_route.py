@@ -8,6 +8,7 @@ from flask import Flask
 # Instanciating flask on app
 app = Flask(__name__)
 
+
 # Routes and decorator
 @app.route('/', strict_slashes=False)
 def homepage():
