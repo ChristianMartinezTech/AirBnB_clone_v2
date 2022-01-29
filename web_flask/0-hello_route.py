@@ -11,6 +11,7 @@ app = Flask(__name__)
 # Route and decorator
 @app.route('/', strict_slashes=False)
 def home():
+    """display “Hello HBNB!"""
     return("Hello HBNB!")
 
 

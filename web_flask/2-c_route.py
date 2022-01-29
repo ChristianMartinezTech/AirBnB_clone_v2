@@ -4,6 +4,7 @@
 
 
 from flask import Flask
+from sys import argv
 
 # Instanciating flask on app
 app = Flask(__name__)
@@ -19,6 +20,11 @@ def homepage():
 def hbnb():
     """display HBNB"""
     return("HBNB")
+
+
+@app.route('/c/<text>', strict_slashes=False)
+def c():
+    """display C is argv[0]"""
 
 
 # Running flask
